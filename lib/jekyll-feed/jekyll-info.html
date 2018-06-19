@@ -1,0 +1,497 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Jekyll v{{ jekyll.version }}</title>
+  <style type="text/css">
+    body {
+      background: #fff;
+      color: #212529;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: .875rem;
+      line-height: 1.5;
+      margin: 1.5rem;
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin: 1.5rem 0 .5rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin: .5rem 0;
+    }
+    table {
+      border-collapse: collapse;
+      margin: .5rem 0;
+      max-width: 100%;
+      table-layout: fixed;
+      width: 100%;
+    }
+    table th,
+    table td {
+      border: 1px solid #dee2e6;
+      padding: .33rem;
+      text-align: left;
+      vertical-align: top;
+    }
+    table thead th {
+      background-color: #e9ecef;
+      color: #495057;
+    }
+    table thead th,
+    table thead td {
+      border-bottom: 2px solid #dee2e6;
+      text-align: left;
+      vertical-align: bottom;
+    }
+    table tbody th {
+      background-color: #f8f9fa;
+    }
+    table tbody + tbody {
+      border-top: 2px solid #dee2e6;
+    }
+    .indent {
+      text-indent: 1rem;
+    }
+    .right {
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+<main class="page" role="main">
+
+  <h1 id="jekyll-info">Jekyll-Info</h1>
+  <table>
+    <tbody>
+      <tr>
+        <th>Time</th>
+        <td class="right">{{ site.time }}</td>
+      </tr>
+      <tr>
+        <th>URL</th>
+        <td class="right"><a href="{{ site.url }}">{{ site.url }}</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <tbody>
+      <tr>
+        <th><a href="#collections">Collections</a></th>
+        <td class="right">{{ site.collections | size }}</td>
+      </tr>
+      {% for collection in site.collections %}
+      <tr>
+        <th class="indent"><a href="#documents-in-{{ collection.label }}">{{ collection.label }}</a></th>
+        <td class="right">{{ collection.docs | size }}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <th><a href="#data-files">Data Files</a></th>
+        <td class="right">{{ site.data | size }}</td>
+      </tr>
+      <tr>
+        <th><a href="#pages">Pages</a></th>
+        <td class="right">{{ site.pages | size }}</td>
+      </tr>
+      <tr>
+        <th><a href="#static-files">Static Files</a></th>
+        <td class="right">{{ site.static_files | size }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <tbody>
+      <tr>
+        <th>Categories</th>
+        <td>
+          {%- for category in site.categories -%}
+            {{category[0]}}{% unless forloop.last %}, {% endunless %}
+          {%- endfor -%}
+        </td>
+      </tr>
+      <tr>
+        <th>Tags</th>
+        <td>
+          {%- for tag in site.tags -%}
+            {{tag[0]}}{% unless forloop.last %}, {% endunless %}
+          {%- endfor -%}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h1 id="configuration">Configuration</h1>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">jekyll</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>version</th>
+        <td>{{ jekyll.version }}</td>
+      </tr>
+      <tr>
+        <th>environment</th>
+        <td>{{ jekyll.environment }}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th colspan="2">site</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>source</th>
+        <td>{{ site.source }}</td>
+      </tr>
+      <tr>
+        <th>destination</th>
+        <td>{{ site.destination }}</td>
+      </tr>
+      <tr>
+        <th>collections_dir</th>
+        <td>{{ site.collections_dir }}</td>
+      </tr>
+      <tr>
+        <th>data_dir</th>
+        <td>{{ site.data_dir }}</td>
+      </tr>
+      <tr>
+        <th>includes_dir</th>
+        <td>{{ site.includes_dir }}</td>
+      </tr>
+      <tr>
+        <th>layouts_dir</th>
+        <td>{{ site.layouts_dir }}</td>
+      </tr>
+      <tr>
+        <th>plugins_dir</th>
+        <td>{{ site.plugins_dir }}</td>
+      </tr>
+      <tr>
+        <th>safe</th>
+        <td>{{ site.safe }}</td>
+      </tr>
+      <tr>
+        <th>include</th>
+        <td>{{ site.include | join: ", " }}</td>
+      </tr>
+      <tr>
+        <th>exclude</th>
+        <td>{{ site.exclude | join: ", " }}</td>
+      </tr>
+      <tr>
+        <th>keep_files</th>
+        <td>{{ site.keep_files | join: ", " }}</td>
+      </tr>
+      <tr>
+        <th>encoding</th>
+        <td>{{ site.encoding }}</td>
+      </tr>
+      <tr>
+        <th>markdown_ext</th>
+        <td>{{ site.markdown_ext }}</td>
+      </tr>
+      <tr>
+        <th>strict_front_matter</th>
+        <td>{{ site.strict_front_matter }}</td>
+      </tr>
+      <tr>
+        <th>show_drafts</th>
+        <td>{{ site.show_drafts }}</td>
+      </tr>
+      <tr>
+        <th>limit_posts</th>
+        <td>{{ site.limit_posts }}</td>
+      </tr>
+      <tr>
+        <th>future</th>
+        <td>{{ site.future }}</td>
+      </tr>
+      <tr>
+        <th>unpublished</th>
+        <td>{{ site.unpublished }}</td>
+      </tr>
+      <tr>
+        <th>whitelist</th>
+        <td>{{ site.whitelist | join: ", " }}</td>
+      </tr>
+      <tr>
+        <th>plugins</th>
+        <td>{{ site.plugins | join: ", " }}</td>
+      </tr>
+      <tr>
+        <th>markdown</th>
+        <td>{{ site.markdown }}</td>
+      </tr>
+      <tr>
+        <th>highlighter</th>
+        <td>{{ site.highlighter }}</td>
+      </tr>
+      <tr>
+        <th>lsi</th>
+        <td>{{ site.lsi }}</td>
+      </tr>
+      <tr>
+        <th>excerpt_separator</th>
+        <td>{{ site.excerpt_separator }}</td>
+      </tr>
+      <tr>
+        <th>incremental</th>
+        <td>{{ site.incremental }}</td>
+      </tr>
+      <tr>
+        <th>detach</th>
+        <td>{{ site.detach }}</td>
+      </tr>
+      <tr>
+        <th>port</th>
+        <td>{{ site.port }}</td>
+      </tr>
+      <tr>
+        <th>host</th>
+        <td>{{ site.host }}</td>
+      </tr>
+      <tr>
+        <th>baseurl</th>
+        <td>{{ site.baseurl }}</td>
+      </tr>
+      <tr>
+        <th>show_dir_listing</th>
+        <td>{{ site.show_dir_listing }}</td>
+      </tr>
+      <tr>
+        <th>permalink</th>
+        <td>{{ site.permalink }}</td>
+      </tr>
+      <tr>
+        <th>paginate_path</th>
+        <td>{{ site.paginate_path }}</td>
+      </tr>
+      <tr>
+        <th>timezone</th>
+        <td>{{ site.timezone }}</td>
+      </tr>
+      <tr>
+        <th>quiet</th>
+        <td>{{ site.quiet }}</td>
+      </tr>
+      <tr>
+        <th>verbose</th>
+        <td>{{ site.verbose }}</td>
+      </tr>
+    </tbody>
+    {% for collection in site.collections %}
+    <thead>
+      <tr>
+        <th colspan="2">site.collections.{{ collection.label }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>relative_directory</th>
+        <td>{{ collection.relative_directory }}</td>
+      </tr>
+      <tr>
+        <th>directory</th>
+        <td>{{ collection.directory }}</td>
+      </tr>
+      <tr>
+        <th>output</th>
+        <td>{{ collection.output }}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+    <thead>
+      <tr>
+        <th colspan="2">site.defaults</th>
+      </tr>
+    </thead>
+    {% for default in site.defaults %}
+    <tbody>
+      <tr>
+        <th colspan="2">scope</th>
+      </tr>
+      {% for value in default.scope %}
+      <tr>
+        <th class="indent">{{ value[0] }}</th>
+        <td>{{ value[1] }}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <th colspan="2">values</th>
+      </tr>
+      {% for value in default.values %}
+      <tr>
+        <th class="indent">{{ value[0] }}</th>
+        <td>{{ value[1] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    {% endfor %}
+    <thead>
+      <tr>
+        <th colspan="2">site.liquid</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>error_mode</th>
+        <td>{{ site.liquid.error_mode }}</td>
+      </tr>
+      <tr>
+        <th>strict_filters</th>
+        <td>{{ site.liquid.strict_filters }}</td>
+      </tr>
+      <tr>
+        <th>strict_variables</th>
+        <td>{{ site.liquid.strict_variables }}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th colspan="2">site.rdiscount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>extensions</th>
+        <td>{{ site.rdiscount.extensions | join: ", " }}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th colspan="2">site.redcarpet</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>extensions</th>
+        <td>{{ site.redcarpet.extensions | join: ", " }}</td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+        <th colspan="2">site.kramdown</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>auto_ids</th>
+        <td>{{ site.kramdown.auto_ids }}</td>
+      </tr>
+      <tr>
+        <th>entity_output</th>
+        <td>{{ site.kramdown.entity_output }}</td>
+      </tr>
+      <tr>
+        <th>toc_levels</th>
+        <td>{{ site.kramdown.toc_levels }}</td>
+      </tr>
+      <tr>
+        <th>smart_quotes</th>
+        <td>{{ site.kramdown.smart_quotes }}</td>
+      </tr>
+      <tr>
+        <th>input</th>
+        <td>{{ site.kramdown.input }}</td>
+      </tr>
+      <tr>
+        <th>hard_wrap</th>
+        <td>{{ site.kramdown.hard_wrap }}</td>
+      </tr>
+      <tr>
+        <th>footnote_nr</th>
+        <td>{{ site.kramdown.footnote_nr }}</td>
+      </tr>
+      <tr>
+        <th>show_warnings</th>
+        <td>{{ site.kramdown.show_warnings }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h1 id="collections">Collections</h1>
+  {% for collection in site.collections %}
+  <h2 id="documents-in-{{ collection.label }}">Documents in {{ collection.label }}</h2>
+  <table>
+    <colgroup>
+      <col class="title">
+      <col class="path">
+      <col class="date">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>path</th>
+        <th>date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for doc in collection.docs %}
+      <tr>
+        <td><a href="{{ doc.url | absolute_url }}">{{ doc.title }}</a></td>
+        <td>{{ doc.path }}</td>
+        <td>{{ doc.date | date_to_xmlschema }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endfor %}
+
+  <h1 id="pages">Pages</h1>
+  <table>
+    <colgroup>
+      <col class="title">
+      <col class="path">
+      <col class="date">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>path</th>
+        <th>date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for doc in site.pages %}
+      <tr>
+        <td><a href="{{ doc.url | absolute_url }}">{{ doc.title }}</a></td>
+        <td>{{ doc.path }}</td>
+        <td>{{ doc.date | date_to_xmlschema }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h1 id="static-files">Static Files</h1>
+  <table>
+    <colgroup>
+      <col class="path">
+      <col class="modified_time">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>path</th>
+        <th>modified_time</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for file in site.static_files %}
+      <tr>
+        <td>{{ file.path | remove_first: "/" }}</td>
+        <td>{{ file.modified_time | date_to_xmlschema }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</main>
+</body>
+</html>
