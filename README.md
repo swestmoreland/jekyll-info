@@ -1,6 +1,8 @@
 # Jekyll Info plugin
 
-A Jekyll plugin to provide information about your Jekyll site
+[![Gem Version](https://badge.fury.io/rb/jekyll-info.svg)](https://badge.fury.io/rb/jekyll-info)
+
+A Jekyll plugin to provide information about your Jekyll site. <a href="https://stevenwestmoreland.com/jekyll-info.html">Example</a>.
 
 ## Installation
 
@@ -20,7 +22,3 @@ plugins:
 ## Usage
 
 The plugin will automatically generate a page at `/jekyll-info.html`.
-
-## Screenshot
-
-![Jekyll Info screenshot](https://stevenwestmoreland.com/img/jekyll-info-screenshot.png)
