@@ -20,3 +20,7 @@ plugins:
 ## Usage
 
 The plugin will automatically generate a page at `/jekyll-info.html`.
+
+## Screenshot
+
+![Jekyll Info screenshot](https://stevenwestmoreland.com/img/jekyll-info-screenshot.png)
