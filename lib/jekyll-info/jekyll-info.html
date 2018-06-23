@@ -1,3 +1,4 @@
+{% if site.info.production == true or jekyll.environment != "production" %}
 <!doctype html>
 <html>
 <head>
@@ -495,3 +496,4 @@
 </main>
 </body>
 </html>
+{% endif %}

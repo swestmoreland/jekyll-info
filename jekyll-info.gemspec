@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.version       = Jekyll::Info::VERSION
   spec.authors       = ["Steven Westmoreland"]
   spec.email         = ["steven.westmoreland@gmail.com"]
-  spec.summary       = "A Jekyll plugin to provide information about your Jekyll site."
+  spec.summary       = "A plugin to provide information about your Jekyll site's configuration."
   spec.homepage      = "https://github.com/swestmoreland/jekyll-info"
   spec.license       = "MIT"
 
