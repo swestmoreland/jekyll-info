@@ -10,12 +10,6 @@
   </a>
 </p>
 
-<p align="center">
-  <a href="https://stevenwestmoreland.com/jekyll-info.html">
-    <img src="https://stevenwestmoreland.com/img/jekyll-info-page-screenshot.png">
-  </a>
-</p>
-
 ## Installation
 
 Add this line to your site's Gemfile:
