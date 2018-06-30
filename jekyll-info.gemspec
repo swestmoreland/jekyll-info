@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Steven Westmoreland"]
   spec.email         = ["steven.westmoreland@gmail.com"]
   spec.summary       = "A plugin to provide information about your Jekyll site's configuration."
-  spec.homepage      = "https://github.com/swestmoreland/jekyll-info"
+  spec.homepage      = "https://stevenwestmoreland.com/projects/jekyll-info.html"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

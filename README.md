@@ -1,8 +1,20 @@
-# Jekyll Info plugin
+<h3 align="center">jekyll-info</h3>
 
-[![Gem Version](https://badge.fury.io/rb/jekyll-info.svg)](https://badge.fury.io/rb/jekyll-info)
+<p align="center">
+  A plugin to provide information about your Jekyll site's configuration. <a href="https://stevenwestmoreland.com/jekyll-info.html">Example</a>.
+</p>
 
-A plugin to provide information about your Jekyll site's configuration. <a href="https://stevenwestmoreland.com/jekyll-info.html">Example</a>.
+<p align="center">
+  <a href="https://badge.fury.io/rb/jekyll-info">
+    <img src="https://badge.fury.io/rb/jekyll-info.svg" alt="Gem version badge">
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://stevenwestmoreland.com/jekyll-info.html">
+    <img src="https://stevenwestmoreland.com/img/jekyll-info-page-screenshot.png" width="720">
+  </a>
+</p>
 
 ## Installation
 
@@ -25,14 +37,14 @@ The plugin will automatically generate a page at `/jekyll-info.html`.
 
 ### Configuration
 
-Specify a non-default path via your site’s config. *Default: jekyll-info.html*
+Specify a non-default path via your site’s config. *(Default: jekyll-info.html)*
 
 ```yml
 info:
   path: site/config.html
 ```
 
-Allow when in production environment. *Default: false*
+Allow when in production environment. *(Default: false)*
 
 ```yml
 info:
