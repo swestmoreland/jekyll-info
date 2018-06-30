@@ -12,7 +12,7 @@
 
 <p align="center">
   <a href="https://stevenwestmoreland.com/jekyll-info.html">
-    <img src="https://stevenwestmoreland.com/img/jekyll-info-page-screenshot.png" width="720">
+    <img src="https://stevenwestmoreland.com/img/jekyll-info-page-screenshot.png">
   </a>
 </p>
 
