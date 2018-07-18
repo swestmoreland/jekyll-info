@@ -25,9 +25,11 @@ plugins:
   - jekyll-info
 ```
 
+Run `bundle install` to install the gem.
+
 ## Usage
 
-The plugin will automatically generate a page at `/jekyll-info.html`.
+Run `bundle exec jekyll build` to build your site. Navigate to `/jekyll-info.html` to view your Jekyll site's configuration.
 
 ### Configuration
 
@@ -44,3 +46,7 @@ Allow when in production environment. *(Default: false)*
 info:
   production: true
 ```
+
+### Updating
+
+Run `bundle update jekyll-info` to update to the latest available version of the gem.
